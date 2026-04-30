@@ -1,15 +1,16 @@
 package com.useless.person_register;
 
 import com.useless.person_register.controllers.PersonController;
-import com.useless.person_register.interfaces.UiInterface;
-import com.useless.person_register.repositories.PersonRepository;
+import com.useless.person_register.controllers.PersonControllerImpl;
+import com.useless.person_register.repositories.PersonRepositoryImpl;
 import com.useless.person_register.ui.UI;
+import com.useless.person_register.ui.UIImpl;
 import com.useless.person_register.utils.Format;
 
 public class App {
-    private static UiInterface _UI = UI.getInstance();
-    private static PersonRepository _personRepository = PersonRepository.getInstance();
-    private static PersonController _personConroller = PersonController.getInstance(_personRepository);
+    private static UI _UI = UIImpl.getInstance();
+    private static PersonRepositoryImpl _personRepository = PersonRepositoryImpl.getInstance();
+    private static PersonController _personConroller = PersonControllerImpl.getInstance(_personRepository);
     private static int option = 0;
     private static boolean running = true;
 
